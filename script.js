@@ -30,3 +30,9 @@ function getHumanChoice() {
     }
     return choice;
 }
+
+// Store Human Score
+let humanScore = 0;
+
+// Store Computer Score
+let computerScore = 0;
