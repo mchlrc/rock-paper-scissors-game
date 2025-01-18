@@ -36,3 +36,32 @@ let humanScore = 0;
 
 // Store Computer Score
 let computerScore = 0;
+
+// Play a round of rock paper scissors
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log(`Draw: ${humanChoice} vs. ${computerChoice}`)
+        return
+    }
+
+    let victor = computerChoice
+
+    if (humanChoice === "Rock" && computerChoice === "Scissors") {
+        victor = humanChoice;
+    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
+        victor = humanChoice;
+    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+        victor = humanChoice;
+    }
+
+    if (victor === humanChoice) {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+    } else {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
