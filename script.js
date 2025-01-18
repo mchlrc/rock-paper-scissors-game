@@ -31,17 +31,11 @@ function getHumanChoice() {
     return choice;
 }
 
-// Store Human Score
-let humanScore = 0;
-
-// Store Computer Score
-let computerScore = 0;
-
 // Play a round of rock paper scissors
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         console.log(`Draw: ${humanChoice} vs. ${computerChoice}`)
-        return
+        return "Draw"
     }
 
     let victor = computerChoice
@@ -56,12 +50,41 @@ function playRound(humanChoice, computerChoice) {
 
     if (victor === humanChoice) {
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        return "Human"
     } else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        console.log(`You lose. ${computerChoice} beats ${humanChoice}`);
+        return "Computer"
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    // Store Human Score
+    let humanScore = 0;
 
-playRound(humanSelection, computerSelection);
+    // Store Computer Score
+    let computerScore = 0;
+
+    let round = 1;
+    
+    while (humanScore + computerScore < 5) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        let result = playRound(humanSelection, computerSelection);
+        if (result === "Human") {
+            humanScore++;
+        } else if (result === "Computer") {
+            computerScore++;
+        }
+
+        console.log(`Round ${round}: Human - ${humanScore}. Computer - ${computerScore}`);
+        round++;
+    }
+
+    if (humanScore > computerScore) {
+        console.log(`You won ${humanScore}-${computerScore}!`)
+    } else {
+        console.log(`You lost ${computerScore}-${humanScore}.`)
+    }
+}
+
+playGame();
