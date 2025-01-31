@@ -3,3 +3,7 @@
   flex-direction: row;
   box-sizing: border-box;
 }
+
+.reset {
+  color: red;
+}

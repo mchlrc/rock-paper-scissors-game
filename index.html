@@ -4,9 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Rock Paper Scissors</h1>
+    <div id="options">
+      <button>Rock</button>
+      <button>Paper</button>
+      <button>Scissors</button>
+    </div>
+
+    <div>
+      <p id="result"></p>
+      <table>
+        <tr>
+          <td>Round:</td>
+          <td id="rnd-number">1</td>
+        </tr>
+        <tr>
+          <td>Human:</td>
+          <td id="hmn-score">0</td>
+        </tr>
+        <tr>
+          <td>Computer:</td>
+          <td id="cmp-score">0</td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
