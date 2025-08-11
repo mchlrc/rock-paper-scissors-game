@@ -1,2 +1,3 @@
-# odin-rock-paper-scissors
-For this project I am creating the game Rock Paper Scissors.
+# rock-paper-scissors-game
+
+This is web-based game of Rock Paper Scissors.
